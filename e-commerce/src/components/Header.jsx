@@ -1,4 +1,4 @@
-import '../components/header.css'
+import './header.css'
 import {Link} from 'react-router'
 export function Header(){
     return(
