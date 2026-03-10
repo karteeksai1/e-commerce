@@ -1,7 +1,17 @@
 import {Header} from '../components/Header'
+import { useEffect, useState } from 'react';
+import axios from 'axios'
 import {products} from '../../starting-code/ecommerce-project-main/data/products'
 import './HomePage.css';
 export function HomePage(){
+  const [products,setProducts]=useState([])
+  useEffect(()=>{
+     axios.get('http://localhost:3000/api/products')
+  .then((response)=>{
+    setProducts(response.data)
+  })
+  },[])
+ 
     return(
         <>
         <Header></Header>
