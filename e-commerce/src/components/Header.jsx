@@ -1,7 +1,9 @@
 import './header.css'
 import {Link} from 'react-router'
 export function Header({cart}){
-  let total=cart.length
+  const total = cart ? cart.reduce((total, item) => {
+    return total + item.quantity;
+  }, 0) : 0;
     return(
         <div className="header">
       <div className="left-section">
